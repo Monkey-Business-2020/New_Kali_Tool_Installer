@@ -2,6 +2,7 @@
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
+sudo apt install myrepos
 sudo apt install htop
 sudo apt install flameshot
 sudo apt install seclists
@@ -19,6 +20,8 @@ git clone https://github.com/jordanpotti/AWSBucketDump.git -y
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git -y
 git clone https://github.com/aboul3la/Sublist3r.git -y
 git clone https://github.com/maurosoria/dirsearch.git -y
+for i in $(ls -l /opt/tools | awk '{print$9}'); do mr register /opt/tools/$i; done
+cd /opt/tools && mr update
 bash /opt/tools/EyeWitness/setup/setup.sh
 cd /opt/tools/AWSBucketDump
 pip install -r requirements.txt
