@@ -1,0 +1,41 @@
+#!/bin/bash
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+nc='\033[0m'
+
+echo -e "${GREEN}\n-------------------------${nc}"
+echo -e "${GREEN}Updating all the REPOS's ${nc}"
+echo -e "${GREEN}-------------------------${nc}\n"
+
+cd /opt
+mr update
+
+echo -e "${GREEN}\n-------------------------${nc}"
+echo -e "${GREEN}Updating all the things ${nc}"
+echo -e "${GREEN}-------------------------${nc}\n"
+
+sudo apt update -y &&
+sudo apt full-upgrade -y &&
+sudo apt dist-upgrade -y &&
+sudo apt autoremove -y
+
+echo -e "${GREEN}\n-------------------------${nc}"
+echo -e "${GREEN}Updating GIT leakers ${nc}"
+echo -e "${GREEN}-------------------------${nc}\n"
+
+cd /opt/gittyleaks
+pip3 install -U gittyleaks
+cd /opt/trufflehog
+pip3 install -U trufflehog
+
+echo -e "${GREEN}\n-------------------------${nc}"
+echo -e "${GREEN}Updating PIP ${nc}"
+echo -e "${GREEN}-------------------------${nc}\n"
+
+pip3 install --upgrade pip
+
+echo -e "${GREEN}\n-------------------------${nc}"
+echo -e "${CYAN}All done!! ${nc}"
+echo -e "${GREEN}-------------------------${nc}\n"
