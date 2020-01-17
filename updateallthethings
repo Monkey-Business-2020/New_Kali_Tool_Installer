@@ -25,9 +25,9 @@ echo -e "${GREEN}\n-------------------------${nc}"
 echo -e "${GREEN}Updating GIT leakers ${nc}"
 echo -e "${GREEN}-------------------------${nc}\n"
 
-cd /opt/gittyleaks
+cd /opt/tools/gitleaks
 pip3 install -U gittyleaks
-cd /opt/trufflehog
+cd /opt/tools/truffleHog
 pip3 install -U trufflehog
 
 echo -e "${GREEN}\n-------------------------${nc}"
