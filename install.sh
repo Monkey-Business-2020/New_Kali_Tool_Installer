@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt update
+sudo apt update -y
 sudo apt upgrade -y
 sudo apt autoremove -y
 sudo apt install myrepos
@@ -7,8 +7,8 @@ sudo apt install htop
 sudo apt install flameshot
 sudo apt install seclists
 sudo apt install python3-pip
-mkdir /opt/tools
-mkdir /opt/wordlists-fav
+sudo mkdir /opt/tools
+sudo mkdir /opt/wordlists-fav
 cd /opt/tools
 git clone https://github.com/UnaPibaGeek/ctfr.git
 git clone https://github.com/zricethezav/gitleaks.git
@@ -41,5 +41,5 @@ for i in $(find /opt/tools/ -name require*.txt); do pip3 install -r $i; done
 bash /opt/tools/Veil/config/setup.sh --force --silent
 bash /opt/tools/EyeWitness/Python/setup/setup.sh
 cd /opt/tools && mr update
-mv /opt/tools/LinEnum/LinEnum.sh /opt/tools/LinEnum/le.sh
-cp /usr/share/seclists/Passwords/Common-Credentials/{10k-most-common.txt,500-worst-passwords.txt,best1050.txt,best110.txt,top-20-common-SSH-passwords.txt,top-passwords-shortlist.txt} /opt/wordlists-fav/
+sudo mv /opt/tools/LinEnum/LinEnum.sh /opt/tools/LinEnum/le.sh
+sudo cp /usr/share/seclists/Passwords/Common-Credentials/{10k-most-common.txt,500-worst-passwords.txt,best1050.txt,best110.txt,top-20-common-SSH-passwords.txt,top-passwords-shortlist.txt} /opt/wordlists-fav/
