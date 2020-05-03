@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo chmod +x updateallthethings && sudo mv updateallthethings /usr/local/bin/
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt autoremove -y
