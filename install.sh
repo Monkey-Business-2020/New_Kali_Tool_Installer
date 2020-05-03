@@ -39,6 +39,7 @@ git clone https://github.com/DedSecInside/TorBot.git
 
 for i in $(ls -l /opt/tools | awk '{print$9}'); do mr register /opt/tools/$i; done
 for i in $(find /opt/tools/ -name require*.txt); do pip3 install -r $i; done
+for i in $(find /opt/tools/ -name "*.sh"); do chmod +x $i; done
 bash /opt/tools/Veil/config/setup.sh --force --silent
 bash /opt/tools/EyeWitness/Python/setup/setup.sh
 cd /opt/tools && mr update
