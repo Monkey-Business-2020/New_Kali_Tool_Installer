@@ -24,6 +24,7 @@ function update_with_network_reset {
         echo -e "${GREEN}Updating all the things ${nc}"
         echo -e "${GREEN}-------------------------${nc}\n"
 
+        sudo apt-get autoclean
         sudo apt update -y &&
         sudo apt full-upgrade -y &&
         sudo apt dist-upgrade -y &&
