@@ -10,6 +10,7 @@ sudo apt install seclists
 sudo apt install python3-pip
 sudo apt install ntp
 sudo apt install snmp
+sudo apt install ftp
 sudo mkdir /opt/tools
 sudo mkdir /opt/wordlists-fav
 cd /opt/tools
